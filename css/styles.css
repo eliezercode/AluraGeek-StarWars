@@ -8,7 +8,7 @@
 body {
     display: flex;
     flex-flow: column wrap;
-    background-image: url(../img/giphy.gif);
+    background-image: url("../img/giphy.gif");
 }
 
 header {
@@ -82,7 +82,7 @@ main {
 .card_image {
     width: 100px;
     height: 100px;
-    background-image: url(../img/giphys.gif);
+    background-image: url("../img/giphys.gif");
     border-radius: 5px;
 }
 
