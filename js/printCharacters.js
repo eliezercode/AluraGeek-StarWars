@@ -9,7 +9,7 @@ function printCharacters() {
             data.forEach(elements => {
                 const imgDelete = document.createElement('img');
                 imgDelete.className = 'delete-characters';
-                imgDelete.src = '../img/btn-delete.svg';
+                imgDelete.src = 'img/btn-delete.svg';
 
                 const codeCards = `
                     <div class="cards" id="${elements.id}">
