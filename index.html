@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/sable-de-luz.png">
+    <title>StarsWars - AluraGeek</title>
+</head>
+
+<body>
+    <header>
+        <div id="header-size">
+            <h1>AluraGeek - Version Star Wars</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="box-characters">
+            <h2 class="characters-title">Personajes:</h2>
+            <div id="characters">
+
+            </div>
+        </section>
+
+        <section class="box-interactive">
+            <div class="box-form">
+                <h2 class="characters-title">Añadir Personaje:</h2>
+                <form class="form-new-character" action="">
+                    <input id="nameCharacters" class="campo" type="text" placeholder="Nombre de Personaje" maxlength="50" required>
+                    <input id="forceCharacters" class="campo" type="number" min="0" max="100" placeholder="Poder en la Fuerza - 0 al 100" required>
+                    <input id="imgCharacters" class="campo" type="text" placeholder="Imagen de Personaje" required>
+                    <div class="button-form">
+                        <button id="btnSend" class="button" >Enviar</button>
+                        <button id="btnClear" class="button" >Limpiar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-size">
+            <h3 class="footer-title">Desarrollado por Elicatari</h3>
+            <h3 class="footer-title">Alura Latam - 2024</h3>
+        </div>
+    </footer>
+
+    <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>
