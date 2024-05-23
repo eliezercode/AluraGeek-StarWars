@@ -32,7 +32,7 @@ function addCharacters() {
             body: JSON.stringify(newCharacters)
         };
 
-        fetch("http://localhost:3000/characters", options)
+        fetch("https://json-server-alura-api.vercel.app/characters", options)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("La solicitud no fue exitosa");
