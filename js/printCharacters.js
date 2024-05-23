@@ -3,7 +3,7 @@ import { deleteCharacters } from "./deleteCharacters.js";
 function printCharacters() {
     const characters = document.getElementById('characters');
 
-    fetch("http://localhost:3000/characters")
+    fetch("https://json-server-alura-api.vercel.app/characters")
         .then(response => response.json())
         .then(data => {
             data.forEach(elements => {
