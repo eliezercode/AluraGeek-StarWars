@@ -1,62 +1,42 @@
-function addCharacters() {
-    const form = document.querySelector('form');
-    const nameCharacters = form.querySelector('#nameCharacters');
-    const forceCharacters = form.querySelector('#forceCharacters');
-    const imgCharacters = form.querySelector('#imgCharacters');
-    const btnSend = form.querySelector('#btnSend');
-    const btnClear = form.querySelector('#btnClear');
+const form = document.querySelector('form');
 
-    btnSend.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        let name = nameCharacters.value;
-        let force = parseFloat(forceCharacters.value);
-        let img = imgCharacters.value;
-
-        if (name.trim() === '' || isNaN(force) || img.trim() === '') {
-            alert('Por favor completa todos los campos');
-            return;
+async function sendCharacters(name, force, img){
+    try {
+        const response = await fetch("https://json-server-alura-api.vercel.app/characters", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name: name,
+                force: force,
+                img: img,
+            })
+        });
+    
+        if (!response.ok) {
+            throw new Error('La solicitud no fue exitosa. Código de estado: ' + response.status);
         }
 
-        const newCharacters = {
-            name: name,
-            force: force,
-            img: img
-        };
+        return await response.json();
+    } catch (error) {
+        console.error("Ha ocurrido un error al crear el personaje:", error);        
+    }
+};
 
-        let options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newCharacters)
-        };
+async function addCharacters(evento) {
+    evento.preventDefault();
+  
+    const name = form.querySelector('#nameCharacters').value;
+    const force = parseFloat(form.querySelector('#forceCharacters').value);
+    const img = form.querySelector('#imgCharacters').value;
 
-        fetch("http://localhost:3000/characters", options)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("La solicitud no fue exitosa");
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Producto añadido:", data);
-            })
-            .catch(error => {
-                console.error("Error al realizar la solicitud:", error);
-            });
-        
+
+    try {
+        const response = await sendCharacters(name, force, img);
         window.location.reload();
-    });
-
-    btnClear.addEventListener('click', function (event) {
-        event.preventDefault()
-        nameCharacters.value = '';
-        forceCharacters.value = '';
-        imgCharacters.value = '';
-    });
+        console.log(response);
+    } catch (error) {
+        console.error(error);
+    }
 }
-
-addCharacters()
 
 export { addCharacters };
