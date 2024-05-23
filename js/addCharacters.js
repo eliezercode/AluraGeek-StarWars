@@ -24,10 +24,11 @@ async function sendCharacters(name, force, img){
 
 async function addCharacters(evento) {
     evento.preventDefault();
-
+  
     const name = form.querySelector('#nameCharacters').value;
     const force = parseFloat(form.querySelector('#forceCharacters').value);
     const img = form.querySelector('#imgCharacters').value;
+
 
     try {
         const response = await sendCharacters(name, force, img);
