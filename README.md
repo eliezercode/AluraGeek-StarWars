@@ -6,7 +6,7 @@ Con la idea de poner en practica los conocimientos adquiridos en clases, es real
 
 En el sitio podrán agregar nuevos personajes de StarWars a la base de datos mediante un formulario que realiza la validación de los datos, también se pueden realizar eliminaciones de personajes ya existentes o de los recientemente agregados.
 
-# Deploy API
+# Para ejecutar correctamente el sitio web realizar Deploy API en VS Code
 npx json-server --watch db.json --port 3000
 
 # Proximamente update de db.json en vercel...
