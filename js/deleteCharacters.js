@@ -1,17 +1,22 @@
-function deleteCharacters(charactersId) {
-    fetch(`https://json-server-alura-api.vercel.app/characters/${charactersId}`, {
-        method: 'DELETE'
-    })
-        .then(response => {
-            if (response.ok) {
-                console.log("Producto eliminado exitosamente");
-                const removeCharacters = document.getElementById(charactersId);
-                removeCharacters.remove();
-            } else {
-                console.error("Error al eliminar el producto:", response.status);
-            }
+async function deleteCharacters(charactersId) {
+    try {
+        fetch(`https://json-server-alura-api.vercel.app/characters/${charactersId}`, {
+            method: 'DELETE'
         })
-        .catch(error => console.error("Error:", error));
+
+        const removeCharacters = document.getElementById(charactersId);
+        removeCharacters.remove();
+
+        if (response.ok) {
+            console.log("Producto eliminado exitosamente");
+        } else {
+            console.error("Error al eliminar el producto:", response.status);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 export { deleteCharacters };
