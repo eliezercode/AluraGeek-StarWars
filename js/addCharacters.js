@@ -45,8 +45,8 @@ function addCharacters() {
             .catch(error => {
                 console.error("Error al realizar la solicitud:", error);
             });
-
-        location.btnSend();
+        
+        window.location.reload();
     });
 
     btnClear.addEventListener('click', function (event) {
