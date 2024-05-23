@@ -1,4 +1,4 @@
-# Bienvenidos a mi Proyecto para el challange del curso FrontEnd de Alura Latam
+# Challange del curso FrontEnd de Alura Latam
 
 # Alura Geek
 
@@ -8,3 +8,5 @@ En el sitio podrán agregar nuevos personajes de StarWars a la base de datos med
 
 # Deploy API
 npx json-server --watch db.json --port 3000
+
+# Proximamente update de db.json en vercel...
