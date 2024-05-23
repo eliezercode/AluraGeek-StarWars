@@ -1,5 +1,5 @@
 function deleteCharacters(charactersId) {
-    fetch(`http://localhost:3000/characters/${charactersId}`, {
+    fetch(`https://json-server-alura-api.vercel.app/characters/${charactersId}`, {
         method: 'DELETE'
     })
         .then(response => {
